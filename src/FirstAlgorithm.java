@@ -1,6 +1,8 @@
 
 /*
  * Problem: Given an array with 0's and 1's find the minimum size of sub-array containing exactly k-zeros
+ * Learnings at the bottom.
+ * Author: Sunil Kata.
  * */
 import java.lang.Math;
 import java.util.HashMap;
@@ -11,6 +13,8 @@ public class FirstAlgorithm {
 	public static int[] inputArray;
 	public static int inputArrayLength = 10;
 	public static int k = 1;
+	public static int[] dupArray;
+	public static int destructiveIterator = 0;
 	
 	public static void main(String[] args) {
 				
@@ -24,14 +28,16 @@ public class FirstAlgorithm {
 			
 			// Randomize 0's and 1's
 			inputArray = new int[inputArrayLength];
+			dupArray = new int[inputArrayLength];
 			for(int i=0; i < inputArrayLength; i++) {
 				
 				double value = Math.random();
 				inputArray[i] = (value > 0.5) ? 1 : 0;		
 				System.out.println("inputarray ["+i+"] = "+inputArray[i]);
+				dupArray[i] = inputArray[i];
 			}
 			// Call Algorithm with the input now.
-			int size = MinArraySize(k);
+			int size = MinArraySizeDestructive(k);
 			System.out.println("Min Sub Array of "+k+ " zeroes =" + size);
 	}
 
@@ -51,13 +57,9 @@ public class FirstAlgorithm {
 			if(inputArray[i] == 1) {
 				continue;
 			}
-			
-			//temp.add(i);
 			hm.put(iterator, i);
 			System.out.println("hash ["+iterator+"] =" + i);
-			iterator++;
-			
-		
+			iterator++;			
 		}
 				
 		int min = inputArrayLength;
@@ -72,10 +74,73 @@ public class FirstAlgorithm {
 			
 			if(min > var) {
 				min = var;
-				System.out.println("Start: "+hm.get(l)+ " End: "+ hm.get(l+k-1));
 			}
 		}
 		
 		return min;
 	}
+	
+	/*
+	 * The Question is to do without space and O(n). 
+	 * We could go destructive way. Replace the hash elements in the array itself, effectively 
+	 * destroying the array. 
+	 * We could recover the array. But not sure, of all the cases.
+	 * */
+	
+	public static int MinArraySizeDestructive(int k) {
+				
+		for(int i=0; i< inputArrayLength; i++) {
+
+			if(inputArray[i] == 0) {
+				
+				inputArray[destructiveIterator] = i;				
+				destructiveIterator++;				
+			}
+		}
+		
+		int min = inputArrayLength;
+		
+		if(destructiveIterator == 0 || destructiveIterator < k) {
+			recover();
+			return 0;
+		}
+		
+		for (int iter=0; iter < destructiveIterator-k; iter++) {
+			
+			int var = inputArray[iter+k-1] - inputArray[iter] + 1;
+			
+			if(min > var) {
+				min = var;
+			}
+		}
+		
+		recover();
+		
+		System.out.println("Success!");
+		return min;
+	}
+	
+	public static void recover() {
+
+		for(int recoverIter = destructiveIterator-1; recoverIter >= 0; recoverIter--) {
+			
+				inputArray[inputArray[recoverIter]] = 0;
+		}
+		
+		for(int test=0; test < inputArrayLength; test++) {
+			if(inputArray[test] !=0 ) {
+				inputArray[test] = 1;
+			}
+			
+			if(inputArray[test] != dupArray[test]) {
+				
+				System.out.println("Failed");				
+			}
+		}
+	}
+	/*
+	 * Border cases are too important to be left out. 
+	 * So for arrays that start at 0, it is very important to have an idea of 0, max cases all the time.
+	 * All the time --> Every loop and at every function return.
+	 * */
 }
