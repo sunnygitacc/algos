@@ -4,6 +4,8 @@
  * Learnings at the bottom.
  * Author: Sunil Kata.
  * */
+
+
 import java.lang.Math;
 import java.util.HashMap;
 
@@ -143,4 +145,5 @@ public class FirstAlgorithm {
 	 * So for arrays that start at 0, it is very important to have an idea of 0, max cases all the time.
 	 * All the time --> Every loop and at every function return.
 	 * */
-}
+ }
+
