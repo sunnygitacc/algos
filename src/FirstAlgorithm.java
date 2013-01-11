@@ -8,6 +8,7 @@
 
 import java.lang.Math;
 import java.util.HashMap;
+import arrays.BitArray;
 
 public class FirstAlgorithm {
 
@@ -34,13 +35,20 @@ public class FirstAlgorithm {
 			for(int i=0; i < inputArrayLength; i++) {
 				
 				double value = Math.random();
-				inputArray[i] = (value > 0.5) ? 1 : 0;		
+				inputArray[i] = (value > 0.9) ? 1 : 0;		
 				System.out.println("inputarray ["+i+"] = "+inputArray[i]);
 				dupArray[i] = inputArray[i];
 			}
 			// Call Algorithm with the input now.
-			int size = MinArraySizeDestructive(k);
-			System.out.println("Min Sub Array of "+k+ " zeroes =" + size);
+			//int size = MinArraySizeDestructive(k);
+			//System.out.println("Min Sub Array of "+k+ " zeroes =" + size);
+
+			// create BitArray object here. Call nonZeroShift
+			BitArray ba = new BitArray();
+			ba.nonZeroShift(inputArray);
+
+			for ( int i = 0; i < inputArray.length; i++ )
+				System.out.println("Array["+i+"] = "+inputArray[i]);
 	}
 
 	/*
