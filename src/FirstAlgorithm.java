@@ -30,25 +30,29 @@ public class FirstAlgorithm {
 			}
 			
 			// Randomize 0's and 1's
-			inputArray = new int[inputArrayLength];
+			inputArray = new int[10];
 			dupArray = new int[inputArrayLength];
-			for(int i=0; i < inputArrayLength; i++) {
+			for(int i=0; i < 10; i++) {
 				
-				double value = Math.random();
-				inputArray[i] = (value > 0.9) ? 1 : 0;		
-				System.out.println("inputarray ["+i+"] = "+inputArray[i]);
-				dupArray[i] = inputArray[i];
-			}
+//				double value = Math.random();
+//				inputArray[i] = (value > 0.9) ? 1 : 0;		
+//				System.out.println("inputarray ["+i+"] = "+inputArray[i]);
+//				dupArray[i] = inputArray[i];
+				inputArray[i] = i;
+ 			}
 			// Call Algorithm with the input now.
 			//int size = MinArraySizeDestructive(k);
 			//System.out.println("Min Sub Array of "+k+ " zeroes =" + size);
 
 			// create BitArray object here. Call nonZeroShift
+//			BitArray ba = new BitArray();
+//			ba.nonZeroShift(inputArray);
+//
+//			for ( int i = 0; i < inputArray.length; i++ )
+//				System.out.println("Array["+i+"] = "+inputArray[i]);
+			
 			BitArray ba = new BitArray();
-			ba.nonZeroShift(inputArray);
-
-			for ( int i = 0; i < inputArray.length; i++ )
-				System.out.println("Array["+i+"] = "+inputArray[i]);
+			ba.Perm(inputArray, 0);
 	}
 
 	/*
