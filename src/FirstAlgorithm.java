@@ -9,6 +9,7 @@
 import java.lang.Math;
 import java.util.HashMap;
 import arrays.BitArray;
+import geometric.Points;
 
 public class FirstAlgorithm {
 
@@ -51,8 +52,11 @@ public class FirstAlgorithm {
 //			for ( int i = 0; i < inputArray.length; i++ )
 //				System.out.println("Array["+i+"] = "+inputArray[i]);
 			
-			BitArray ba = new BitArray();
-			ba.Perm(inputArray, 0);
+//			BitArray ba = new BitArray();
+//			ba.Perm(inputArray, 0);
+			
+			Points a = new Points();
+			a.closestPairs();
 	}
 
 	/*
