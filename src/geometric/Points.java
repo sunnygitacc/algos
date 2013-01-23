@@ -26,7 +26,7 @@ public class Points {
 		int pointsX[] = new int[10];
 		int pointsY[] = new int[10];
 		
-		// Create some imput.
+		// Create some input.
 		for(int i =0; i < 10; i++) {			
 			pointsX[i] = (int) Math.floor( 1 + 100 * Math.random());
 			pointsY[i] = (int) Math.floor( 1 + 100 * Math.random());

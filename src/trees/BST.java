@@ -11,4 +11,11 @@ public class BST {
  * constructor should ask, whether we want it in array or list. If list, what kind of one.
  * Build a rondom bst, if not specified. 
  * */
+	public BST() {
+		
+	}
+	
+	public void createTree() {
+		
+	}
 }

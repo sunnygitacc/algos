@@ -10,6 +10,7 @@ import java.lang.Math;
 import java.util.HashMap;
 import arrays.BitArray;
 import geometric.Points;
+import trees.BinaryTree;
 
 public class FirstAlgorithm {
 
@@ -55,8 +56,17 @@ public class FirstAlgorithm {
 //			BitArray ba = new BitArray();
 //			ba.Perm(inputArray, 0);
 			
-			Points a = new Points();
-			a.closestPairs();
+//			Points a = new Points();
+//			a.closestPairs();
+			
+			BinaryTree bt = new BinaryTree();
+			bt.createTree();
+			//bt.traverseBreadthFirst();
+			//bt.traverseDepthFirst();
+			//bt.traverseDepthFirstRecursive(bt.root);
+			//bt.LCARecursive(bt.root, 15, 18);
+			bt.LCAIterative(20,14);
+			//bt.printLCA();
 	}
 
 	/*
