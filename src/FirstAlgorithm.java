@@ -4,8 +4,13 @@
  * Learnings at the bottom.
  * Author: Sunil Kata.
  * */
+
+
 import java.lang.Math;
 import java.util.HashMap;
+import arrays.BitArray;
+import geometric.Points;
+import trees.BinaryTree;
 
 public class FirstAlgorithm {
 
@@ -27,18 +32,41 @@ public class FirstAlgorithm {
 			}
 			
 			// Randomize 0's and 1's
-			inputArray = new int[inputArrayLength];
+			inputArray = new int[10];
 			dupArray = new int[inputArrayLength];
-			for(int i=0; i < inputArrayLength; i++) {
+			for(int i=0; i < 10; i++) {
 				
-				double value = Math.random();
-				inputArray[i] = (value > 0.5) ? 1 : 0;		
-				System.out.println("inputarray ["+i+"] = "+inputArray[i]);
-				dupArray[i] = inputArray[i];
-			}
+//				double value = Math.random();
+//				inputArray[i] = (value > 0.9) ? 1 : 0;		
+//				System.out.println("inputarray ["+i+"] = "+inputArray[i]);
+//				dupArray[i] = inputArray[i];
+				inputArray[i] = i;
+ 			}
 			// Call Algorithm with the input now.
-			int size = MinArraySizeDestructive(k);
-			System.out.println("Min Sub Array of "+k+ " zeroes =" + size);
+			//int size = MinArraySizeDestructive(k);
+			//System.out.println("Min Sub Array of "+k+ " zeroes =" + size);
+
+			// create BitArray object here. Call nonZeroShift
+//			BitArray ba = new BitArray();
+//			ba.nonZeroShift(inputArray);
+//
+//			for ( int i = 0; i < inputArray.length; i++ )
+//				System.out.println("Array["+i+"] = "+inputArray[i]);
+			
+//			BitArray ba = new BitArray();
+//			ba.Perm(inputArray, 0);
+			
+//			Points a = new Points();
+//			a.closestPairs();
+			
+			BinaryTree bt = new BinaryTree();
+			bt.createTree();
+			//bt.traverseBreadthFirst();
+			//bt.traverseDepthFirst();
+			//bt.traverseDepthFirstRecursive(bt.root);
+			//bt.LCARecursive(bt.root, 15, 18);
+			bt.LCAIterative(20,14);
+			//bt.printLCA();
 	}
 
 	/*
@@ -143,4 +171,5 @@ public class FirstAlgorithm {
 	 * So for arrays that start at 0, it is very important to have an idea of 0, max cases all the time.
 	 * All the time --> Every loop and at every function return.
 	 * */
-}
+ }
+
