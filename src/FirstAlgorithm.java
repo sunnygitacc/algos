@@ -1,8 +1,7 @@
-
 /*
  * Problem: Given an array with 0's and 1's find the minimum size of sub-array containing exactly k-zeros
  * Learnings at the bottom.
- * Author: Sunil Kata.
+ * @author: Sunil Kata.
  * */
 
 
