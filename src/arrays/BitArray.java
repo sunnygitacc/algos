@@ -2,7 +2,6 @@ package arrays;
 
 /*
  * Everything related to bit operations and 0's, 1's in an array. 
- * Author: Sunil Kata1
  * */
 
 public class BitArray {
