@@ -6,7 +6,7 @@ import java.lang.Math;
  * Closest Pairs.
  * Problem and solution can be found here http://en.wikipedia.org/wiki/Closest_pair_of_points_problem#Planar_case
  * 
- * Basically problem is to find the shortest distance between two points in 2D space.
+ * Basically problem is to find the shortest distance between two points in 2D space.111
  * 
  * Solution: Divide and conquer. Merge is crucial here. Min dist from left and Min dist from right are 
  * are only valuable if we could find the some min distance across the mid point too. 
