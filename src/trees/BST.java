@@ -3,7 +3,6 @@ package trees;
 /*
  * Problem: Everything related to Binary Search Trees.
  * Class that creates BST's at random/some fashion, compares them, Finds LCA among two of them ,etc. new 
- * stuff will be added on demand.
 */
 public class BST {
 /*
