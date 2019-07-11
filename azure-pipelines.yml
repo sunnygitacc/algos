@@ -2,7 +2,7 @@
 - task: PythonScript@0
   inputs:
     scriptSource: 'filePath'
-    scriptPath: 'python-test.py'
+    scriptPath: '$(System.DefaultWorkingDirectory)/python-test.py'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
