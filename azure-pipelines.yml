@@ -6,8 +6,8 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'default'
+pool: testpool
+
 
 steps:
 - script: echo Hello, world!
